@@ -1,0 +1,41 @@
+/* font lora link */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+*{
+  background-color: #ffffff;
+  font-family: 'Lora'!important;
+}
+.container{
+  background-color: #F5F5F5;
+
+}
+.product-slider img{
+  object-fit: cover;
+}
+.font_sm{
+font-style: normal;
+font-weight: 400;
+font-size: 1.125rem;
+line-height: 1.438rem;
+color: #242430;
+
+}
+.ticket_section{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: .5rem;
+}
+.btn_ticket_select{
+
+}
+
+.btn_ticket_select{
+  height: 3rem;
+  width: 3rem;
+
+}
+.btn_ticket_select .btn{
+  height: 100%;
+  width: 100%;
+  padding: .675rem!important;
+}
+

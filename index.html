@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- custom css -->
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/4a631f0fb4.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+  <div class="container-fluid container-lg">
+    <!-- Product lottery Ticket banner Start -->
+    <div class="row my-5 gx-lg-5">
+      <div class="col-12 col-lg-4">
+        <div id="product_slide_id" class="carousel slide product-slider" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active ratio ratio-4x3">
+              <img src="images/bag-1.jpg" class="" alt="">
+            </div>
+            <div class="carousel-item ratio ratio-4x3">
+              <img src="images/bag-2.jpg" class="" alt="">
+            </div>
+            <div class="carousel-item ratio ratio-4x3">
+              <img src="images/bag-3.jpg" class="" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8">
+        <div class="row mt-sm-3 mt-3">
+          <div class="col-6 col-lg-12">
+            <p class="font_sm">Win The</p>
+            <h4 class="fs-3">Louis Vuitton</h4>
+            <p class="fs-3 fs-lg-4">Marceau Monogram</p>
+          </div>
+          <div class="col-6 col-lg-12 text-end text-lg-start">
+            <h5>Market Price</h5>
+            <p>&#8356; <span>1,499.00</span></p>
+          </div>
+
+
+
+        </div>
+        <div class="row">
+          <p class="col-12">How Many Tickets Would you like to Buy</p>
+          <div class="col-12 col-lg-5 ticket_section mx-sm-auto mx-lg-1">
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id1" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id1">1</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id2" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id2">2</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id3" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id3">3</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id4" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id4">4</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id5" autocomplete="off">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id5">5</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id6" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id6">6</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id7" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id7">7</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id8" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id8">8</label>
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id9" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id9">9</label>
+
+            </div>
+            <div class="col btn_ticket_select">
+              <input type="radio" class="btn-check" name="ticket" id="ticket_id10" autocomplete="off"
+                onclick="enableContinueButton()">
+              <label class="btn btn-outline-dark rounded-circle" for="ticket_id10">10</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-muted mx-auto ms-lg-end mt-3 mt-lg-0 text-center text-lg-end">
+          <p>&#8356; <span>45.00</span> Per ticket</p>
+          <p class="fs-5">&#8356; <span>90.00</span> Total Price</p>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-12 col-lg-4">
+              <p class="py-3 text-center text-lg-start border-2 border-top border-bottom mb-0"><strong class="h6 fw-bold">
+                Draw-date:
+              </strong><span>30th December 2025</span></p>
+            </div>
+            
+            <div class="col-8 col-lg-4 mx-auto me-lg-0 pe-lg-0">
+              <button name="continueButton" class="btn btn-outline-dark border-2 px-5 mt-3 rounded-0 w-100" onclick=""
+                disabled>Continue</button>
+            </div>
+          <p class="text-muted text-end me-5">Step 1 of 3</p>
+        </div>
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+  <!-- Product lottery Ticket banner End -->
+
+  </div>
+  <script>
+
+
+    function enableContinueButton() {
+
+      let get_radioButton = document.getElementsByName('ticket');
+      let ticket_length = get_radioButton.length;
+      let continueButton = document.getElementsByName('continueButton')[0];
+
+      let isTicketSelected = false;
+
+      for (let i = 0; i < ticket_length; i++) {
+        if (get_radioButton[i].checked) {
+          isTicketSelected = true;
+          break;
+        }
+      }
+
+      if (ticketSelected) {
+        continueButton.disabled = false;
+      }
+      else {
+        continueButton.disabled = true;
+      }
+    }
+  </script>
+</body>
+
+</html>
