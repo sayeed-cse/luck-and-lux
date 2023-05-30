@@ -44,7 +44,9 @@ body {
   grid-template-columns: repeat(5, 1fr);
   gap: .5rem;
 }
-
+.d_none{
+  visibility: hidden;
+}
 .btn_ticket_select {}
 
 .btn_ticket_select {
@@ -52,7 +54,10 @@ body {
   width: 3rem;
 
 }
-
+input[type=number]{
+  appearance: none;
+  text-align: center;
+}
 .btn_ticket_select .btn {
   height: 100%;
   width: 100%;

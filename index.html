@@ -131,10 +131,10 @@
         </form>
 
         <form class="col-12 d-none" id="form_step_2" onsubmit="return false;">
-          <p class="mt-5">This is the Question section - <span>what is the name of this brand?</span></p>
-          <div id="modal" class="d-none col-12">
-            <p class="text-center bg-black text-light fs-4 py-1">Please choose a correct answer.
-              <button onclick="closeModal()" class="btn btn-danger">Close</button>
+          <p class="mt-5 mt-lg-2 mb-1">This is the Question section - <span>what is the name of this brand?</span></p>
+          <div id="modal" class="d_none col-12 cl-lg-6">
+            <p class="text-start fs-6 py-1">Please choose a correct answer.
+              <button onclick="closeModal()" class="btn btn-sm px-3 ms-2 btn-outline-danger">Close</button>
             </p>
           </div>
           <div class="quiz_options">
@@ -171,14 +171,16 @@
               <img src="images/gucci.jpg" alt="" class="img-thumbnail">
             </div>
           </div>
-          <div class="my-4 text-muted d-lg-flex text-center text-lg-start justify-content-between my-3">Tickets
-            <div class="wrapper d-flex justify-content-center justify-content-lg-start my-3 my-lg-0 mx-lg-0">
-              <button
-                class="d-flex btn-dark justify-content-center align-items-center border border-1 rounded-circle ticket_amount"
-                id="selected_ticket_id"></button>
-              <p class="ms-2 d-flex flex-column gap-1">
-                <button class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_up">&#8593;</button>
-                <button class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_down">&#8595;</button>
+          <div class="my-4 text-muted d-lg-flex text-center text-lg-start justify-content-between my-3">
+            <div class="d-flex justify-content-center justify-content-lg-start align-content-center my-3 my-lg-0 mx-lg-0">
+              <span class="fs-5 m-auto me-2">Tickets </span><input type="number"
+                class="bg-dark text-light border border-1 rounded-circle btn_ticket_select"
+                id="selected_ticket_id" name="selected_ticket" value="">
+              <p class="ms-2 my-auto d-flex flex-column gap-1">
+                <button
+                  class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_up">&#8593;</button>
+                <button
+                  class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_down">&#8595;</button>
               </p>
 
             </div>
@@ -200,7 +202,7 @@
 
       </div>
 
-      
+
 
 
 
@@ -243,7 +245,7 @@
       var selectedOption = document.querySelector('input[name="ticket"]:checked').value;
 
       var inputNumber = document.getElementById('selected_ticket_id');
-      inputNumber.innerHTML = selectedOption;
+      inputNumber.value = selectedOption;
 
       let ticket_option = document.getElementsByClassName('btn_ticket_select');
       let total_ticket_option = ticket_option.length;
@@ -251,18 +253,18 @@
       const arrow_up = document.querySelector(".arrow_up"),
         arrow_down = document.querySelector(".arrow_down"),
         btn_ticket_select = document.querySelector(".btn_ticket_select");
-      let temp = parseInt(inputNumber.innerHTML);
+      let temp = inputNumber.value;
       // console.log(typeof(temp));
       arrow_up.addEventListener("click", () => {
         temp++;
-        temp = (temp < total_ticket_option) ? "" + temp : temp;
-        inputNumber.innerHTML = temp;
+        temp = (temp < total_ticket_option) ? 0  + temp : temp;
+        inputNumber.value = temp;
       });
       arrow_down.addEventListener("click", () => {
         if (temp > 1) {
           temp--;
-          temp = (temp < total_ticket_option) ? "" + temp : temp;
-          inputNumber.innerHTML = temp;
+          temp = (temp < total_ticket_option) ? 0 + temp : temp;
+          inputNumber.value = temp;
         }
       });
 
@@ -279,7 +281,7 @@
     function enableSubmitButton() {
       var submitButton = document.getElementById('selected_ticket_id');
       submitButton.disabled = false;
-      
+
     }
 
 
@@ -291,10 +293,10 @@
         submitButton.disabled = false;
         submitButton.classList.remove('btn-outline-dark');
         submitButton.classList.add('btn-dark');
-        modal.classList.add('d-none');
+        modal.classList.add('d_none');
       } else {
         submitButton.disabled = true;
-        modal.classList.remove('d-none');
+        modal.classList.remove('d_none');
       }
     }
 
