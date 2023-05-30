@@ -257,12 +257,14 @@
       arrow_up.addEventListener("click", () => {
         temp++;
         temp = (temp < total_ticket_option) ? 0  + temp : temp;
+        inputNumber.value = temp;
         total_price_id.innerHTML = perTicketPrice * temp;
       });
       arrow_down.addEventListener("click", () => {
         if (temp > 1) {
           temp--;
           temp = (temp < total_ticket_option) ? 0 + temp : temp;
+          inputNumber.value = temp;
           total_price_id.innerHTML = perTicketPrice * temp;
 
         }
