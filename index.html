@@ -110,8 +110,8 @@
             </div>
           </div>
           <div class="text-muted mx-auto ms-lg-end mt-3 mt-lg-0 text-center text-lg-end">
-            <p class="mt-3">&#8356; <span>45.00</span> Per ticket</p>
-            <p class="fs-5">&#8356; <span>90.00</span> Total Price</p>
+            <p class="mt-3">&#8356; <span class="ticket_unit_price" id="ticket_unit_id">45.00</span> Per ticket</p>
+            <p class="fs-5 d_none">&#8356; <span>90.00</span> Total Price</p>
           </div>
           <div class="row mx-auto">
             <div class="col-12 col-lg-7">
@@ -185,7 +185,7 @@
 
             </div>
             <p class="">&#8356; <span>45.00</span> Per ticket</p>
-            <p class="fs-5">&#8356; <span>90.00</span> Total Price</p>
+            <p class="fs-5">&#8356; <span class="total_price" id="total_price_id">90.00</span> Total Price</p>
           </div>
           <div class="row mx-auto">
             <div class="col-12 px-0 border-2 border-top border-bottom d-flex justify-content-between">
@@ -201,15 +201,7 @@
         </form>
 
       </div>
-
-
-
-
-
     </div>
-
-
-
 
   </div>
   </div>
@@ -245,10 +237,18 @@
       var selectedOption = document.querySelector('input[name="ticket"]:checked').value;
 
       var inputNumber = document.getElementById('selected_ticket_id');
-      inputNumber.value = selectedOption;
+      let inputValue = inputNumber.value = selectedOption;
 
       let ticket_option = document.getElementsByClassName('btn_ticket_select');
       let total_ticket_option = ticket_option.length;
+      let perTicketUnitId = document.getElementById('ticket_unit_id');
+      let perTicketPrice = parseFloat(perTicketUnitId.innerHTML);
+
+      // console.log(total_ticket_option,inputValue);
+      let total_priceCalc = inputValue * perTicketPrice;
+      
+      let total_price_id = document.getElementById('total_price_id');
+      total_price_id.innerHTML = Math.ceil(total_priceCalc);
 
       const arrow_up = document.querySelector(".arrow_up"),
         arrow_down = document.querySelector(".arrow_down"),
