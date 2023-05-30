@@ -132,6 +132,11 @@
 
         <form class="col-12 d-none" id="form_step_2" onsubmit="return false;">
           <p class="mt-5">This is the Question section - <span>what is the name of this brand?</span></p>
+          <div id="modal" class="d-none col-12">
+            <p class="text-center bg-black text-light fs-4 py-1">Please choose a correct answer.
+              <button onclick="closeModal()" class="btn btn-danger">Close</button>
+            </p>
+          </div>
           <div class="quiz_options">
             <div class="quiz_option">
               <label for="option1" class="btn btn-outline-dark border-2 px-5 py-4 rounded-0 w-100 fs-5">
@@ -168,12 +173,12 @@
           </div>
           <div class="my-4 text-muted d-lg-flex text-center text-lg-start justify-content-between my-3">Tickets
             <div class="wrapper d-flex justify-content-center justify-content-lg-start my-3 my-lg-0 mx-lg-0">
-              <span
-                class="d-flex justify-content-center align-items-center border border-1 rounded-circle ticket_amount"
-                id="selected_ticket_id"></span>
+              <button
+                class="d-flex btn-dark justify-content-center align-items-center border border-1 rounded-circle ticket_amount"
+                id="selected_ticket_id"></button>
               <p class="ms-2 d-flex flex-column gap-1">
-                <span class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_up">&#8593;</span>
-                <span class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_down">&#8595;</span>
+                <button class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_up">&#8593;</button>
+                <button class="d-flex justify-content-center align-items-center border border-1 rounded-circle arrow_down">&#8595;</button>
               </p>
 
             </div>
@@ -195,11 +200,7 @@
 
       </div>
 
-      <div id="modal" class="d-none col-12">
-        <p class="text-center bg-secondary text-light display-4">Please choose a correct answer.
-          <button onclick="closeModal()" class="btn btn-danger">Close</button>
-        </p>
-      </div>
+      
 
 
 
@@ -224,6 +225,8 @@
       for (var i = 0; i < radioButtons.length; i++) {
         if (radioButtons[i].checked) {
           continueButton.disabled = false;
+          continueButton.classList.remove('btn-outline-dark');
+          continueButton.classList.add('btn-dark');
           break;
         }
       }
@@ -276,6 +279,7 @@
     function enableSubmitButton() {
       var submitButton = document.getElementById('selected_ticket_id');
       submitButton.disabled = false;
+      
     }
 
 
@@ -285,6 +289,8 @@
 
       if (selectedOption.id === 'option3') {
         submitButton.disabled = false;
+        submitButton.classList.remove('btn-outline-dark');
+        submitButton.classList.add('btn-dark');
         modal.classList.add('d-none');
       } else {
         submitButton.disabled = true;
