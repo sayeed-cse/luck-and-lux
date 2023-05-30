@@ -248,23 +248,23 @@
       let total_priceCalc = inputValue * perTicketPrice;
       
       let total_price_id = document.getElementById('total_price_id');
-      total_price_id.innerHTML = Math.ceil(total_priceCalc);
+      total_price_id.innerHTML = total_priceCalc;
 
       const arrow_up = document.querySelector(".arrow_up"),
         arrow_down = document.querySelector(".arrow_down"),
         btn_ticket_select = document.querySelector(".btn_ticket_select");
       let temp = inputNumber.value;
-      // console.log(typeof(temp));
       arrow_up.addEventListener("click", () => {
         temp++;
         temp = (temp < total_ticket_option) ? 0  + temp : temp;
-        inputNumber.value = temp;
+        total_price_id.innerHTML = perTicketPrice * temp;
       });
       arrow_down.addEventListener("click", () => {
         if (temp > 1) {
           temp--;
           temp = (temp < total_ticket_option) ? 0 + temp : temp;
-          inputNumber.value = temp;
+          total_price_id.innerHTML = perTicketPrice * temp;
+
         }
       });
 
